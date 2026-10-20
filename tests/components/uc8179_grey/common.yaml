@@ -1,0 +1,16 @@
+http_request:
+
+display:
+  - platform: uc8179_grey
+    id: epd_grey
+    cs_pin: ${cs_pin}
+    dc_pin: ${dc_pin}
+    busy_pin:
+      number: ${busy_pin}
+      inverted: true
+    reset_pin: ${reset_pin}
+    update_interval: never
+    lambda: |-
+      it.fill(Color(255, 255, 255, 255));
+      it.filled_rectangle(0, 0, 200, 100, Color(170, 170, 170, 255));
+      it.rectangle(0, 0, it.get_width(), it.get_height(), Color(0, 0, 0, 255));
